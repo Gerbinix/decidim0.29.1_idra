@@ -6,7 +6,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |spec|
   spec.metadata = { "rubygems_mfa_required" => "true" }
   spec.name = "decidim-idra"
-  spec.version = Decidim::Idra::0.1
   spec.required_ruby_version = ">= 3.1"
   spec.authors = ["Daniele Noto"]
   spec.email = ["daniele.noto@eng.it"]
