@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.summary = "Provides IDRA integration for Decidim."
   s.description = "OAdds IDRA interface for Decidim."
 
-  s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,lib,db}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
   s.add_dependency "truncate_html"
 end
