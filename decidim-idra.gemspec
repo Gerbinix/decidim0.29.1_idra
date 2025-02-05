@@ -1,27 +1,22 @@
 # frozen_string_literal: true
 
-lib = File.expand_path("lib", __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+$LOAD_PATH.push File.expand_path("lib", __dir__)
 
-Gem::Specification.new do |spec|
-  spec.metadata = { "rubygems_mfa_required" => "true" }
-  spec.name = "decidim-idra"
-  spec.required_ruby_version = ">= 3.1"
-  spec.authors = ["Daniele Noto"]
-  spec.email = ["daniele.noto@eng.it"]
+require "decidim/Idra/version"
 
-  spec.summary = "Provides IDRA integration for Decidim."
-  spec.description = "Adds IDRA interface for Decidim."
-  spec.homepage = "https://github.com/URBREATH/decidim0.29.1_idra"
-  spec.license = "AGPL-3.0"
+Gem::Specification.new do |s|
+  s.version = Decidim::Idra::VERSION
+  s.authors = ["Daniele Noto", "Gabriele Gerbino"]
+  s.email = ["daniele.noto@eng.it", "gabriele.gerbino@eng.it"]
+  s.license = "AGPL-3.0"
+  s.homepage = "https://github.com/URBREATH/decidim0.29.1_idra"
+  s.required_ruby_version = ">= 3.1.0"
 
-  spec.files = Dir[
-    "{app,config}/**/*",
-    "LICENSE-AGPLv3.txt",
-    "Rakefile",
-    "README.md"
-  ]
+  s.name = "decidim-idra"
+  s.summary = "Provides IDRA integration for Decidim."
+  s.description = "OAdds IDRA interface for Decidim."
 
-  spec.add_dependency "truncate_html"
+  s.files = Dir["{app,config,lib}/**/*", "LICENSE-AGPLv3.txt", "Rakefile", "README.md"]
 
+  s.add_dependency "truncate_html"
 end
