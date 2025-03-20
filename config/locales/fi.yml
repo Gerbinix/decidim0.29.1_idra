@@ -1,0 +1,34 @@
+---
+fi:
+  decidim:
+    components:
+      iframe:
+        name: Iframe
+        settings:
+          global:
+            announcement: Ilmoitus
+            content_width: Sisällön leveys
+            content_width_options:
+              full_width: Täysi leveys
+              manual_pixel: Leveys pikseleissä
+              manual_percentage: Leveys prosenteissa
+            content_height: Sisällön korkeus
+            content_height_help: Käyttääksesi automaattista korkeuden säätelyä, tarvitsee iframe -tarjoajasi tukea
+              iframe-resizer Javascript -kirjastoa. Varmista iframe -tarjoajaltasi tämän kirjaston
+              tukeminen ennen automaattisen korkeuden säädön käyttöä. Katso iframe-resizer
+              dokumentaatio lukeaksesi lisää tämän kirjaston tukemisesta.
+            content_height_options:
+              "16:9": "16:9"
+              "4:3": "4:3"
+              auto: Automaattinen korkeus
+              manual_pixel: Korkeus pikseleissä
+            frameborder: Sisällön kehys
+            height_value: Korkeusarvo
+            resize_iframe: Iframe -elementin koko
+            resize_iframe_options:
+              responsive: Automaattinen koko
+              manual: Manuaalinen koko
+            src: Sisällön lähde
+            src_help: 'Syötä Iframe -elementin sisällön lähteen polku.'
+            viewport_width: Rajaa maksimi-leveys sovelluksen ikkunaan
+            width_value: Leveysarvo

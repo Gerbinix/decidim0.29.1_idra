@@ -1,6 +1,37 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+# frozen_string_literal: true
 
-require_relative "config/application"
+require "decidim/dev/common_rake"
+require "fileutils"
 
-Rails.application.load_tasks
+def seed_db(path)
+  Dir.chdir(path) do
+    system("bundle exec rake db:seed")
+  end
+end
+
+def copy_helpers
+  FileUtils.mkdir_p "spec/decidim_dummy_app/app/views/v0.11", verbose: true
+end
+
+desc "Generates a dummy app for testing"
+task test_app: "decidim:generate_external_test_app" do
+  ENV["RAILS_ENV"] = "test"
+  copy_helpers
+end
+
+desc "Generates a development app."
+task :development_app do
+  Bundler.with_original_env do
+    generate_decidim_app(
+      "development_app",
+      "--app_name",
+      "#{base_app_name}_development_app",
+      "--path",
+      "..",
+      "--recreate_db",
+      "--demo"
+    )
+  end
+
+  seed_db("development_app")
+end
